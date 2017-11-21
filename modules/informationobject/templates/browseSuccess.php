@@ -114,12 +114,12 @@
           'pager' => $pager,
           'filters' => $search->filters)) ?>
 
-        <?php echo get_partial('search/facet', array(
+        <?php /* echo get_partial('search/facet', array(
           'target' => '#facet-mediaTypes',
           'label' => sfConfig::get('app_ui_label_mediatype'),
           'facet' => 'mediatypes',
           'pager' => $pager,
-          'filters' => $search->filters)) ?>
+          'filters' => $search->filters)) */ ?>
 
       </div>
 
