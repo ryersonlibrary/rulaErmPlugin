@@ -63,6 +63,14 @@
           'pager' => $pager,
           'filters' => $search->filters)) ?>
 
+        <? /* This is the Resource facet */ ?>
+        <?php echo get_partial('search/facet', array(
+          'target' => '#facet-subjects',
+          'label' => sfConfig::get('app_ui_label_subject'),
+          'facet' => 'subjects',
+          'pager' => $pager,
+          'filters' => $search->filters)) ?>
+          
         <?php if (sfConfig::get('app_multi_repository')): ?>
           <?php echo get_partial('search/facet', array(
             'target' => '#facet-repository',
@@ -90,13 +98,6 @@
           'target' => '#facet-places',
           'label' => sfConfig::get('app_ui_label_place'),
           'facet' => 'places',
-          'pager' => $pager,
-          'filters' => $search->filters)) ?>
-
-        <?php echo get_partial('search/facet', array(
-          'target' => '#facet-subjects',
-          'label' => sfConfig::get('app_ui_label_subject'),
-          'facet' => 'subjects',
           'pager' => $pager,
           'filters' => $search->filters)) ?>
 
