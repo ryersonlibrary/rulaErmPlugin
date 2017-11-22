@@ -28,6 +28,12 @@ class rulaErmPluginConfiguration extends sfPluginConfiguration
    */
   public function initialize()
   {
+
+    // This hack lets us set the directory that AtoM looks for the sfDcPlugin! 
+    // NOTE: it does not reload the configuration in the main plugin directory (sfDcPlugin/config/sfDcPluginConfiguration.php), only allows us to control functionality within the module folder.
+    // the plugin file is deleted because it tries to redeclare the class on the plugins page...
+    $this->configuration->setPluginPath('sfDcPlugin', $this->rootDir . '/plugins/sfDcPlugin');
+
     $this->dispatcher->connect('context.load_factories', array($this, 'contextLoadFactories'));
     
     $decoratorDirs = sfConfig::get('sf_decorator_dirs');
