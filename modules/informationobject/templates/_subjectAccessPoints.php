@@ -1,11 +1,11 @@
 <div class="field">
 
   <?php if (isset($sidebar)): ?>
-    <h4><?php echo __('Related subjects') ?></h4>
+    <h4><?php echo __('Related ' . sfConfig::get('app_ui_label_subject')) ?></h4>
   <?php elseif (isset($mods)): ?>
-    <h3><?php echo __('Subjects') ?></h3>
+    <h3><?php echo __(sfConfig::get('app_ui_label_subject')) ?></h3>
   <?php else: ?>
-    <h3><?php echo __('Subject access points') ?></h3>
+    <h3><?php echo __(sfConfig::get('app_ui_label_subject') . ' access points') ?></h3>
   <?php endif; ?>
 
   <div>
